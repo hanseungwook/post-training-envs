@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "nnopt"
+version = "0.1.0"
+description = "RL environment for neural network optimization"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0",
+    "torchvision>=0.15",
+    "numpy>=1.24",
+    "scikit-learn>=1.3",
+    "datasets>=2.14",
+    "pytorch-ssim>=0.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+nnopt-evaluate = "nnopt.evaluate:main"
+
+[tool.setuptools.packages.find]
+include = ["nnopt*"]
